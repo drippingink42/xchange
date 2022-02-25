@@ -164,7 +164,7 @@ class App extends Component {
     return gif_width;
   }
 
-  getWdith() {
+  getWidth() {
     if (!this.ctx) {
       return 1;
     }
@@ -175,7 +175,7 @@ class App extends Component {
     if(this.state.orientation === "Horizontal") {
       this.ctx.clearRect(0, 0, this.state.width, this.getHeight());
     } else {
-      this.ctx.clearRect(0, 0, this.getGifWidth *2, this.getGifHeight())
+      this.ctx.clearRect(0, 0, this.getGifWidth()*2, this.getGifHeight())
     }
     this.drawTitle();
     this.drawTagline();
