@@ -1,51 +1,68 @@
-# X-Change Caption Editor
+# Getting Started with X-Change Caption Maker
 
-Click this link to make captions!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) initially by HahaLuckyMe.  Since then, I've (X-ChangeDan2Dani) refactored it into a standalone Electron App that incorporates FFMPEG to make X-Change Style Captions with the click of a button.
 
-https://hahaluckyme.github.io/xchange/
+## Getting Started
 
-# How to make a caption
-## 0. Download `ffmpeg`. This is how you combine the text into the gif.
+In the root directory, run 
 
-https://www.ffmpeg.org/
+### `npm install`
 
-## 1. Find a gif.
+to install the required packages.  Once completed you can run 
 
-You can use Pornhub's gif generator to turn videos into gifs.
+### `npm run electron:start ` 
 
-https://www.pornhub.com/gifgenerator
+to run the app in it's normal electron container.  This also opens the chromium dev tools to help development.
 
-Every gif/webm will be resized to 800px width, so make sure the resolution is high enough.
+To create a release of this app run:
 
-Or, you can find something on gfycat by right clicking and copying the video source.
+### `npm run electron:package:win`
 
-![alt text](/gfycat.png)
+The output in the dist folder can be distributed.   Either the installer .exe or the win-unpacked folder.
 
-## 2. Write a caption
+Happy Hacking!
 
-Use the editor to write a saucy caption. Open the advanced settings if you want to edit the tagline / title / reposition the height.
+## Other Available Scripts
 
-## 3. Download the frame + run the `ffmpeg` command
+In the project directory, you can run:
 
-Clicking the download link will download the frame image with the text. It will also copy the `ffmpeg` command into your clipboard. You will have to run the `ffmpeg` command to combine it with the gif/webm that you originally had.
+### `npm start`
 
-example:
-```
-ffmpeg -i "Lucky.png" -i "https://giant.gfycat.com/BabyishPleasingFantail.webm" -filter_complex "[1]scale=800:-1[a]; [0][a]overlay[b]; [b][0]overlay" "Lucky.webm"
-```
+Runs the app in the a browser in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Go to the same folder that contains the downloaded image. Right click the folder and go to "Command Prompts" -> "Command Prompt". Run the command there. The command will download the image and attach that frame to it.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Alternatively, if you don't want to download `ffmpeg`, you can use this online ffmpeg site to run it online. You will have to upload the frame image, and write the command on the site to match the one given (i.e. remove the `ffmpeg -i "Lucky.png"` at the start and move the `"Lucky.webm"` at the end into the filename box)
+### `npm test`
 
-https://ffmpeg.run/
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 4. Upload and post in the subreddit
-Upload to Gfycat:
+### `npm run build`
 
-https://gfycat.com/
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Post into Reddit:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-https://www.reddit.com/r/XChangePill/
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
 
